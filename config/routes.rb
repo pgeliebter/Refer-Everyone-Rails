@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get "campaigns" => "campaigns#index"
   get "campaigns/:id" => "campaigns#show"
   post "campaigns" => "campaigns#create"
+
+  get "conversions/:id" => "conversion#show"
+  post "conversions" => "conversion#create"
 end
