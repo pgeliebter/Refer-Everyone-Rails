@@ -16,5 +16,9 @@ class ConversionsController < ApplicationController
   end
 
   def show
+    conversion = Conversion.find(params[:id])
+    render json: conversion
+  rescue
+    render json: {}, status: 422
   end
 end
