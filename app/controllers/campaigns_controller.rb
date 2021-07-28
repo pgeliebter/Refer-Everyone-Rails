@@ -22,7 +22,7 @@ class CampaignsController < ApplicationController
     if campaign.save
       render json: { message: "Success!", newCampaign: campaign }
     else
-      render json: { errors: campaign.errors.full_messages }
+      render json: { errors: campaign.errors }, status: 422
     end
   end
 end
