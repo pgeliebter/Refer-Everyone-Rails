@@ -6,7 +6,7 @@ class ConversionsController < ApplicationController
       email: params[:email],
       phone: params[:phone],
       campaign_id: params[:campaign_id],
-      referred_by: (params[:referred_by] ? Conversion.find(params[:referred_by]) : nil),
+      referred_by: (params[:referred_by].blank? ? nil : Conversion.find(params[:referred_by])),
     )
     if conversion.save
       render json: { message: "Conversion created successfully" }, status: :created
