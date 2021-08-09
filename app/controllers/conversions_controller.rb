@@ -9,7 +9,7 @@ class ConversionsController < ApplicationController
       referred_by: (params[:referred_by].blank? ? nil : Conversion.find(params[:referred_by])),
     )
     if conversion.save
-      render json: { message: "Conversion created successfully" }, status: :created
+      render json: { message: "Conversion created successfully", conversionId: conversion.id }, status: :created
     else
       render json: { errors: conversion.errors.full_messages }, status: 422
     end
