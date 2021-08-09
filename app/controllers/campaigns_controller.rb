@@ -7,6 +7,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
+    
     campaign = current_user.campaigns.find(params[:id])
     render json: campaign
     # rescue allows us to return value if the above doesn't work for any reason (like if we can't find the campaign for that user.)

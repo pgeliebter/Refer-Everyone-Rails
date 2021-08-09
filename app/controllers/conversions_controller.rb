@@ -21,4 +21,12 @@ class ConversionsController < ApplicationController
   rescue
     render json: {}, status: 422
   end
+
+  def validate_campaign
+    if Campaign.find(params[:campaign_id])
+      render json: { exist: true }
+    end
+  rescue
+    render json: { exist: false }
+  end
 end

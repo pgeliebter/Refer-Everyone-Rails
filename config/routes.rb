@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get "conversions/:id" => "conversions#show"
   post "conversions" => "conversions#create"
+  get "campaign/:campaign_id/" => "conversions#validate_campaign"
 end
