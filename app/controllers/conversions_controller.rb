@@ -24,7 +24,8 @@ class ConversionsController < ApplicationController
 
   def validate_campaign
     if Campaign.find(params[:campaign_id])
-      render json: { exist: true }
+      campaign = Campaign.find(params[:campaign_id])
+      render json: { exist: true, campaign: { name: campaign.name, company: campaign.company } }
     end
   rescue
     render json: { exist: false }
