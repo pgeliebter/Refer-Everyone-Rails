@@ -7,7 +7,6 @@ class CampaignsController < ApplicationController
   end
 
   def show
-    
     campaign = current_user.campaigns.find(params[:id])
     render json: campaign
     # rescue allows us to return value if the above doesn't work for any reason (like if we can't find the campaign for that user.)
@@ -18,7 +17,7 @@ class CampaignsController < ApplicationController
   def create
     campaign = Campaign.new(user_id: current_user.id,
                             name: params[:name],
-                            company: params[:company])
+                            company: params[:company], incentive: params[:incentive])
     if campaign.save
       render json: { message: "Success!", newCampaign: campaign }
     else
