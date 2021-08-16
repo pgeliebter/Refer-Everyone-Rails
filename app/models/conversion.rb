@@ -6,4 +6,8 @@ class Conversion < ApplicationRecord
   def total_referrals
     self.referrals.count()
   end
+
+  def total_incentive
+    self.campaign.incentive * self.total_referrals
+  end
 end
