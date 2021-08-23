@@ -30,4 +30,15 @@ class ConversionsController < ApplicationController
   rescue
     render json: { exist: false }
   end
+
+  def lookup
+    if Conversion.where("phone = ?", "#{params[:phone]}") != []
+      conversions = Conversion.where(["phone = ?", "#{params[:phone]}"])
+      render json: conversions
+    else
+      render json: { exist: false }, status: 422
+    end
+  rescue
+    render json: { exist: false }, status: 422
+  end
 end
