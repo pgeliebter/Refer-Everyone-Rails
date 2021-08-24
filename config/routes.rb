@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "campaigns/:id" => "campaigns#show"
   post "campaigns" => "campaigns#create"
 
-  get "conversions/lookup" => "conversions#lookup"
+  get "conversions/lookup/:phone" => "conversions#lookup"
   get "conversions/:id" => "conversions#show"
   post "conversions" => "conversions#create"
 

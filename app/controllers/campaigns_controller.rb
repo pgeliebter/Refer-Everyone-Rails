@@ -21,9 +21,9 @@ class CampaignsController < ApplicationController
   def create
     campaign = Campaign.new(user_id: current_user.id,
                             name: params[:name],
-                            company: params[:company], incentive: params[:incentive])
+                            company: params[:company], incentive: params[:incentive], image: params[:image])
     if campaign.save
-      render json: { message: "Success!", newCampaign: campaign }
+      render json: campaign
     else
       render json: { errors: campaign.errors }, status: 422
     end
