@@ -1,5 +1,5 @@
 class Campaign < ApplicationRecord
-  validates :name, :company, presence: true
+  validates :name, :company, :incentive, presence: true
 
   belongs_to :user
   has_many :conversions
