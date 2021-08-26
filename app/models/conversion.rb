@@ -10,4 +10,8 @@ class Conversion < ApplicationRecord
   def total_incentive
     self.campaign.incentive * self.total_referrals
   end
+
+  def created_at
+    attributes["created_at"].strftime("%-m/%-d/%-y%l:%m%P")
+  end
 end
