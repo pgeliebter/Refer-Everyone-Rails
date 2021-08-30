@@ -1,8 +1,8 @@
 users = User.create!([
-  { first_name: "Ralph", last_name: "Carlyle", email: "ralph@example.com", password_digest: "$2a$12$YgHz1IsHlMpaEYP/Hpmdw.Gwxw3AD2CuLbi6ohIKFvk/0E.JlWhIm", phone: "111-111-1111" },
-  { first_name: "Yaa", last_name: "Geli", email: "yaa@example.com", password_digest: "$2a$12$WDDhk8OeUkTVWTT3fGzOt.k1P9Wnxvb1Qi2JaR/bkDKXPe6qUXqyq", phone: "222-222-2222" },
-  { first_name: "George", last_name: "Lucas", email: "starwars@example.com", password_digest: "$2a$12$2Z/w8JPRBty0vqhsMyUuvevDOU.7kNgo9KnexqtlSFCOxZigTeMza", phone: "123-123-1233" },
-  { first_name: "Someone", last_name: "Random", email: "random@example.com", password_digest: "$2a$12$Qko4bAhANO4l0bFMFILe4.kv1ImZX2wWx7xA20cpEzwqJB5rrYSi6", phone: "917-999-9999" },
+  { first_name: "Ralph", last_name: "Carlyle", email: "ralph@example.com", password: "password", password_confirmation: "password", phone: "111-111-1111" },
+  { first_name: "Yaa", last_name: "Geli", email: "yaa@example.com", password: "password", password_confirmation: "password", phone: "222-222-2222" },
+  { first_name: "George", last_name: "Lucas", email: "starwars@example.com", password: "password", password_confirmation: "password", phone: "123-123-1233" },
+  { first_name: "Someone", last_name: "Random", email: "random@example.com", password: "password", password_confirmation: "password", phone: "917-999-9999" },
 ])
 
 campaigns = Campaign.create!([
